@@ -1,0 +1,143 @@
+<html>
+<body>
+<div class="container">
+  <header class="heading">Registration-Form</header>
+  
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+    <form [formGroup]="this.farmerService.form" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="$key">
+
+      <!-- <img-cropper [image]="data" [settings]="cropperSettings"></img-cropper><br>
+      <div *ngIf="changingImage" class="form-group">
+        <button fxLayoutAlign="center center" md-button type="button" (click)="saveNewImage()">Save</button>
+      </div> -->
+
+      <!-- <div *ngIf="!changingImage" class="form-group">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <div class="col-xs-8">
+              <img fxLayoutAlign="center center" src="https://via.placeholder.com/128x128" class="profile-img">
+              <button fxLayoutAlign="center center" md-button type="button" (click)="changingImageClick()">Change Image</button>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="col-sm-12">
+        <div class="form-group">
+          <div class="col-xs-4">
+            <label class="fname">First Name :</label>
+          </div>
+          <div class="col-xs-8">
+            <input formControlName="firstName" class="form-control" [ngClass]="{'is-invalid' :submitted && formControls.firstName.errors}" placeholder="First Name">
+              <div class="invalid-feedback" *ngIf="submitted && formControls.firstName.errors">
+                This field is required.
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <div class="form-group">
+          <div class="col-xs-4">
+            <label class="lname">Last Name :</label>
+          </div>
+          <div class="col-xs-8">
+            <input formControlName="lastName" class="form-control" [ngClass]="{'is-invalid' :submitted && formControls.lastName.errors}" placeholder="Last Name">
+              <div class="invalid-feedback" *ngIf="submitted && formControls.lastName.errors">
+                This field is required.
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <div class="form-group">
+          <div class="col-xs-4">
+            <label class="mail">Email :</label>
+          </div>
+          <div class="col-xs-8">
+            <input formControlName="email" class="form-control" [ngClass]="{'is-invalid' :submitted && formControls.email.errors}" placeholder="Email">
+              <div class="invalid-feedback" *ngIf="submitted && formControls.email.errors">
+                Invalid email address.
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <div class="form-group">
+          <div class="col-xs-4">
+            <label class="mobi">Mobile :</label>
+          </div>
+          <div class="col-xs-8">
+            <input formControlName="mobile" class="form-control" [ngClass]="{'is-invalid' :submitted && formControls.mobile.errors}" placeholder="Mobile">
+              <div class="invalid-feedback" *ngIf="submitted && formControls.mobile.errors">
+                <label *ngIf="formControls.mobile.errors.required">This field is required.</label>
+                <label *ngIf="formControls.mobile.errors.minLength">Atleast 10 numbers.</label>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <div class="form-group">
+          <div class="col-xs-4">
+            <label class="Age">Age :</label>
+          </div>
+          <div class="col-xs-8">
+            <input formControlName="age" class="form-control" placeholder="Age">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <div class="form-group">
+          <div class="col-xs-4">
+            <label class="Address">Address :</label>
+          </div>
+          <div class="col-xs-8">
+            <input formControlName="address" class="form-control" placeholder="Address">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <div class="form-group">
+          <div class="col-xs-4">
+            <label class="loc">Location :</label>
+          </div>
+          <div class="col-xs-8">
+            <input formControlName="location" class="form-control" placeholder="Location">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <div class="form-group">
+          <div class="col-xs-8">
+            <input type="submit" class="btn btn-primary" value="Submit">
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+      <div clss="col-sm-12">
+        <div class="caol-xs-8">
+          <div class="alert alert-info" *ngIf="showSuccessMessage">
+           Submitted successfully.
+          </div>
+        </div>
+      </div>
+
+    </div> 
+    <div class="col-md-7">
+      <app-farmer-list></app-farmer-list>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
